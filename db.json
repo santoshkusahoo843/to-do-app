@@ -1,0 +1,115 @@
+{
+  "user": [
+    {
+      "id": "084d",
+      "userName": "Santosh Kumar Sahoo",
+      "userId": "Santosh@1",
+      "email": "sahoo.santoshrashmi@gmail.com",
+      "password": "Santosh@123"
+    },
+    {
+      "id": "a384",
+      "userName": "Santosh Sahoo",
+      "userId": "Santosh@12",
+      "email": "sahoo.santoshrashmi@gmail.com",
+      "password": "Santosh@1234"
+    },
+    {
+      "id": "f82b",
+      "userName": "Kumar Sahoo",
+      "userId": "Santosh",
+      "email": "kajallenka972@gmail.com",
+      "password": "Santosh@9668"
+    }
+  ],
+  "appointment": [
+    {
+      "id": "0a96",
+      "userId": "Santosh@1",
+      "title": "Build Login Page",
+      "description": "Create UI and validation",
+      "dueDate": "2026-02-15",
+      "status": "pending"
+    },
+    {
+      "userId": "Santosh@1",
+      "title": "Connect json server",
+      "description": "Integrate frontend with json server",
+      "dueDate": "2026-02-08",
+      "status": "completed",
+      "id": "5b9a"
+    },
+    {
+      "userId": "Santosh",
+      "title": "Setup Authentication",
+      "description": "Implement JWT based login system",
+      "dueDate": "2026-02-09",
+      "status": "in progress",
+      "id": "45cc"
+    },
+    {
+      "id": "c825",
+      "userId": "Santosh",
+      "title": "Design Dashboard UI",
+      "description": "Create responsive dashboard layout using Bootstrap",
+      "dueDate": "2026-02-12",
+      "status": "pending"
+    },
+    {
+      "id": "5102",
+      "userId": "Santosh",
+      "title": "Add Form Validation",
+      "description": "Integrate Formik and Yup validation for task forms",
+      "dueDate": "2026-02-16",
+      "status": "completed"
+    },
+    {
+      "id": "fe4d",
+      "userId": "Santosh",
+      "title": "Optimize API Calls",
+      "description": "Refactor axios requests and handle loading states",
+      "dueDate": "2026-02-18",
+      "status": "pending"
+    },
+    {
+      "id": "0ef1",
+      "userId": "Santosh",
+      "title": "Implement Task Filtering",
+      "description": "Add filter functionality based on status and due date",
+      "dueDate": "2026-02-22",
+      "status": "in progress"
+    },
+    {
+      "id": "1224",
+      "userId": "Santosh@1",
+      "title": "Create a Todo App",
+      "description": "Completed the todo App",
+      "dueDate": "2026-02-10",
+      "status": "completed"
+    },
+    {
+      "id": "d4d0",
+      "userId": "Santosh@1",
+      "title": "Completed Node.js",
+      "description": "Completed node.js and started express.js",
+      "dueDate": "2026-02-12",
+      "status": "completed"
+    },
+    {
+      "id": "a5a9",
+      "userId": "Santosh@1",
+      "title": "Start express.js",
+      "description": "Started learning express.js",
+      "dueDate": "2026-02-12",
+      "status": "in progress"
+    },
+    {
+      "id": "78e2",
+      "userId": "Santosh@1",
+      "title": "Java Exam",
+      "description": "Java exam will be conducted",
+      "dueDate": "2026-02-13",
+      "status": "pending"
+    }
+  ]
+}
