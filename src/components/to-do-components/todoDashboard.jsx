@@ -24,6 +24,13 @@ function TodoDashboard(){
         })
     }
 
+    const[searchStr,setSearchStr] = useState();
+
+    function getSearchStr(value){
+        setSearchStr(value);
+    }
+
+
     useEffect(()=>{
         if(cookies.userId===undefined){
             navigate("/");
@@ -34,7 +41,7 @@ function TodoDashboard(){
     return(
         <div className="bg-light" style={{height:'100vh'}}>
             <div>
-                <TodoHeader link="login" btnClass="text-danger fw-bold" exit="bi bi-box-arrow-left pe-1" btnTxt={cookies.userId} visible="justify-content-between" width="w-50" />
+                <TodoHeader link="login" btnClass="text-danger fw-bold" exit="bi bi-box-arrow-left pe-1" btnTxt={cookies.userId} getSearchStr={getSearchStr} visible="justify-content-between" width="w-50" />
             </div>
             <div>
                 <div className="p-4">
@@ -79,7 +86,7 @@ function TodoDashboard(){
                         </div>
                     </div>
                     <div className="my-3">
-                        <Outlet />
+                        <Outlet context={{searchStr}} />
                     </div>
                 </div>
             </div>

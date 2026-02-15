@@ -1,36 +1,56 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useCookies } from "react-cookie";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 
 
 function TodoTable(){
 
-    const[appointments,setAppointments] = useState([{id:'',userId:'',title:'',description:'',dueDate:'',status:''}]);
+    const[allAppointments,setAllAppointments] = useState([{id:'',userId:'',title:'',description:'',dueDate:'',status:''}]);
+    const[filAppointments,setFilApointments] = useState([{id:'',userId:'',title:'',description:'',dueDate:'',status:''}]);
 
     const[cookies]=useCookies(["userId"]);
+    
+    let{searchStr} = useOutletContext();
 
-    function dataLoad(){
+    function fetchData(){
         axios.get(`http://localhost:3000/appointment`)
         .then(response=>{
             const filterData = response.data.filter(
                 newResponse=>newResponse.userId === cookies.userId
             );
-            setAppointments(filterData);
+            setAllAppointments(filterData);
         })
-        
+    }
+
+    function filData(){
+        if(searchStr){
+            let app = allAppointments.filter(
+                app => app.title.toLowerCase().includes(searchStr)
+            )
+            setFilApointments(app);
+        }
+        else{
+            setFilApointments(allAppointments);
+        }
     }
 
     useEffect(()=>{
-        dataLoad();
-    },[appointments,cookies])
+        fetchData();
+    },[])
+
+    useEffect(()=>{
+        filData();
+    },[allAppointments,searchStr])
+
 
     return(
         <div>
-            <table className=" table">
+            <table className="table">
                 <thead>
                     <tr>
+                        <th>SlNo.</th>
                         <th>Task Title</th>
                         <th>Description</th>
                         <th>Status</th>
@@ -40,9 +60,10 @@ function TodoTable(){
                 </thead>
                 <tbody>
                     {
-                        appointments.map(appointment=>{
+                        filAppointments.map((appointment,idx)=>{
                             return(
-                                <tr key={appointment.title}>
+                                <tr key={appointment.id}>
+                                    <td>{idx+1}</td>
                                     <td>{appointment.title}</td>
                                     <td>{appointment.description}</td>
                                     <td>{appointment.status}</td>

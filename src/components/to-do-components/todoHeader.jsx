@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom"
 function TodoHeader(props){
 
 
-    const[cookies,setCookies,deleteCookies]=useCookies(["userId","userName"]);
+    const[cookies,deleteCookies]=useCookies(["userId","userName"]);
     const navigate = useNavigate();
 
     function handleSignOut(e){
@@ -15,6 +15,11 @@ function TodoHeader(props){
             deleteCookies('userName');
             navigate("/");
         }
+    }
+
+    function getSearch(e){
+        let value = e.target.value.toLowerCase();
+        props.getSearchStr(value);
     }
 
     return (
@@ -31,10 +36,9 @@ function TodoHeader(props){
                     <button className="btn">About</button>
                 </div>
                 <div className={`${props.visible} d-flex align-items-center ${props.width}`}>
-                    <div className={`${props.search}`}>
-                        <div className=" input-group m-1 border border-secondary-subtle rounded rounded-3">
-                            <button className="bi bi-search btn btn-outline-secondary"></button>
-                            <input type="text" className=" form-control bg-transparent" placeholder="Search tasks..." style={{border:'none'}}/>
+                    <div className={`${props.search} w-50`}>
+                        <div className="m-1 border border-secondary-subtle rounded rounded-3">
+                            <input type="text"  className="form-control bg-transparent" onChange={getSearch} placeholder="Search tasks..." style={{border:'none'}}/>
                         </div>
                     </div>
                     <Link to={`/${props.link}`} className=""><button className={`btn ${props.btnClass}`} onClick={handleSignOut} value={props.btnTxt}><span className={`${props.exit}`}></span>{props.btnTxt}</button></Link>

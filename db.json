@@ -24,14 +24,6 @@
   ],
   "appointment": [
     {
-      "id": "0a96",
-      "userId": "Santosh@1",
-      "title": "Build Login Page",
-      "description": "Create UI and validation",
-      "dueDate": "2026-02-15",
-      "status": "pending"
-    },
-    {
       "userId": "Santosh@1",
       "title": "Connect json server",
       "description": "Integrate frontend with json server",
@@ -88,27 +80,27 @@
       "status": "completed"
     },
     {
-      "id": "d4d0",
       "userId": "Santosh@1",
       "title": "Completed Node.js",
       "description": "Completed node.js and started express.js",
       "dueDate": "2026-02-12",
+      "status": "in progress",
+      "id": "d4d0"
+    },
+    {
+      "id": "d397",
+      "userId": "Santosh@1",
+      "title": "Validate Search String",
+      "description": "Validate the search string and getting the data whose title inclides the search string.",
+      "dueDate": "2026-02-15",
       "status": "completed"
     },
     {
-      "id": "a5a9",
+      "id": "c4f5",
       "userId": "Santosh@1",
-      "title": "Start express.js",
-      "description": "Started learning express.js",
-      "dueDate": "2026-02-12",
-      "status": "in progress"
-    },
-    {
-      "id": "78e2",
-      "userId": "Santosh@1",
-      "title": "Java Exam",
-      "description": "Java exam will be conducted",
-      "dueDate": "2026-02-13",
+      "title": "add a filter button",
+      "description": "Add a filter button which filters accoring to the date",
+      "dueDate": "2026-02-15",
       "status": "pending"
     }
   ]
